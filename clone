@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+if [ -z $1 ]
+then
+    echo "url tidak boleh kosong";
+    exit;
+fi
+
+extract_domain() {
+    if [[ $1 =~ ^https?://([^/]+) ]]; then
+        echo "${BASH_REMATCH[1]}"
+    else
+        echo "URL tidak valid"
+        exit;
+    fi
+}
+
+domain=$(extract_domain $1)
+
+# clone website use wget
+wget --recursive --no-parent --page-requisites --html-extension --convert-links --adjust-extension --domains $domain $1
+
+# adjust directory structure and move HTML files to index.html
+find . -type f -name '*.html' ! -name 'index.html' -print0 | while IFS= read -r -d '' file; do
+    dir=$(dirname "$file")
+    base=$(basename "$file" .html)
+    
+    # Create a new directory with the base name of the file
+    mkdir -p "$dir/$base"
+    
+    # Move the HTML file to the new directory as index.html
+    mv "$file" "$dir/$base/index.html"
+done
+
+
+# clean up unnecessary directories
+find . -type d -empty -delete
+
+echo "cloning website telah selesai dilakukan"
