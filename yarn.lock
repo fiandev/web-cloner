@@ -150,10 +150,10 @@ entities@^9.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-9.0.0.tgz#c45df3cdbc5ce805474759f4ec4ea7907d9d5477"
   integrity sha512-oJFNDJg3kTPwAD1cNn2+WmUq4wFoo09npc3Ydf1D7ED4smRiWrsKnaLxykrTWgyGEcusc87P5dxlAleol9kpkg==
 
-html-minifier@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-5.0.0.tgz#4c51f1999642a7acb292cc965af236c48b13e231"
-  integrity sha512-b8dMdsLVL4jObGwTZJDf78WO6WvG5DJos/z8x8P4WbetG2EIoLPmAKtFqfhHFg1yy30hopyPhKxGucisfjyGIg==
+html-minifier@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-5.0.1.tgz#b3d66af75c7bfc047d7696a91ced0f059999ddc1"
+  integrity sha512-5jfRbLfDIpk1Oi+n6gJuBgDuHMxxyGG+gQP01rTrKdxqVQ7lGhSNkOMj3I65M/7Ce4qQM+hiu1iYQQ40I4+ALw==
   dependencies:
     commander "^15.0.0"
     entities "^9.0.0"
